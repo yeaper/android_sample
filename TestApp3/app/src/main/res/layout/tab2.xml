@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/welcome_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Great to see  you !"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"/>
+
+    <EditText
+        android:id="@+id/write_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="输入数据"
+        android:textSize="17sp"
+        android:lines="4"
+        android:layout_marginTop="15dp">
+    </EditText>
+
+    <Button
+        android:id="@+id/write"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="写入"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/read_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:lines="4"
+        android:layout_marginTop="15dp">
+    </TextView>
+
+    <Button
+        android:id="@+id/read"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="读取"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimary"/>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tabs_ViewPage</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="zipai">本日自拍</string>
+    <string name="xinqing">心情小记</string>
+    <string name="shoudian">手电筒</string>
+    <string name="music">音乐</string>
+    <string name="naozhong">闹钟</string>
+</resources>
