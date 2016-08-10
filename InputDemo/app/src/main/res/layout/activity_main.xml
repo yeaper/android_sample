@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <ListView
+        android:id="@+id/comment_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp" />
+
+    <LinearLayout
+        android:id="@+id/rl_enroll"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/comment"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/comment"
+            android:layout_weight="1"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/chat"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/chat"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_comment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
+
+        <TextView
+            android:id="@+id/hide_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hide_down"
+            android:textSize="13sp"
+            android:textColor="@color/txtgrey"
+            android:drawableBottom="@drawable/hide_dowm"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:layout_toRightOf="@id/hide_down"
+            android:layout_marginLeft="10dp"/>
+        <EditText
+            android:id="@+id/comment_content"
+            android:hint="@string/comment_content"
+            android:textSize="15sp"
+            android:singleLine="true"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:layout_toRightOf="@id/hide_down"
+            android:layout_marginLeft="20dp"/>
+
+        <Button
+            android:id="@+id/comment_send"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:text="@string/send"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@color/mainColor"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="15dp"/>
+    </RelativeLayout>
+</RelativeLayout>
