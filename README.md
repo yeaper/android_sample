@@ -1,3 +1,3 @@
 # android_sample
 
-This is a repository that I can push native project.
+This is a repository , in which I can push native project.
