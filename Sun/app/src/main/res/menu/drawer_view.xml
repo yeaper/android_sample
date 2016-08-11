@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 侧栏的菜单 -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_app_about"
+            android:icon="@drawable/eye"
+            android:title="软件相关" />
+    </group>
+</menu>
