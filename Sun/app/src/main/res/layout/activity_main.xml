@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_plus_circle"
+            android:src="@drawable/mood_publish"
             android:scaleType="fitCenter"
             app:layout_behavior="com.yyp.sun.util.ScrollingFABBehavior"/>
 
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="left"
-        android:background="@color/white"
+        android:background="@color/bg_grey"
         app:headerLayout="@layout/nv_header"
         app:menu="@menu/drawer_view">
     </android.support.design.widget.NavigationView>

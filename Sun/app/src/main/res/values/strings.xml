@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">暖心</string>
+    
+
 
 
     <string name="drawer_open">Open navigation drawer</string>
