@@ -1,5 +1,6 @@
 package com.yyp.sun;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -22,6 +23,8 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.yyp.sun.ui.mood.MoodFragment;
 import com.yyp.sun.ui.news.NewsFragment;
 import com.yyp.sun.ui.test.TestFragment;
+import com.yyp.sun.ui.user.LoginActivity;
+import com.yyp.sun.util.AuthUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private View header;
     private SimpleDraweeView headerView;
     private TextView userName;
+    private SimpleDraweeView userSex;
 
     private String[] tabTitle = {"测试", "资讯", "心情"};
     private ActionBarDrawerToggle drawerToggle;
@@ -87,14 +91,39 @@ public class MainActivity extends AppCompatActivity {
      * 初始化侧栏
      */
     public void initNavigation() {
+        // 获取侧边栏的头部布局
         header = navigationView.getHeaderView(0);
         headerView = (SimpleDraweeView) header.findViewById(R.id.header_view);
         userName = (TextView) header.findViewById(R.id.header_username);
+        userSex = (SimpleDraweeView) header.findViewById(R.id.header_sex);
 
-        // 设置头像和用户名
-        userName.setText("请登录");
-        Uri uri = Uri.parse("res://com.yyp.sun/" + R.drawable.avatar);
-        headerView.setImageURI(uri);
+        // 初始化头像、用户名、性别
+        if(AuthUtil.isLogin()){
+            userName.setText(AuthUtil.getCurrentUser().getUsername());
+            headerView.setImageURI(Uri.parse(AuthUtil.getCurrentUser().getAvatarUrl()));
+            if(AuthUtil.getCurrentUser().getSex().equals("男")){
+                userSex.setImageURI(Uri.parse("res://com.yyp.sun/" + R.drawable.sex_boy));
+            }else{
+                userSex.setImageURI(Uri.parse("res://com.yyp.sun/" + R.drawable.sex_girl));
+            }
+        }else{
+            userName.setText("请登录");
+            headerView.setImageURI(Uri.parse("res://com.yyp.sun/" + R.drawable.avatar));
+            userSex.setImageURI(Uri.parse("res://com.yyp.sun/" + R.drawable.sex_boy));
+        }
+        // 点击侧栏的头部
+        header.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!AuthUtil.isLogin()){
+                    Intent goLogin = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(goLogin);
+                }else {
+                    Intent goLogin = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(goLogin);
+                }
+            }
+        });
     }
 
     /**

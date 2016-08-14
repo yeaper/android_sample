@@ -38,4 +38,10 @@ dependencies {
     // 依赖注入
     compile 'com.jakewharton:butterknife:8.2.1'
     apt 'com.jakewharton:butterknife-compiler:8.2.1'
+
+    // Bmob 数据
+    compile 'cn.bmob.android:bmob-sdk:3.5.0'
+
+    //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
+    compile 'cn.bmob.android:http-legacy:1.0'
 }
