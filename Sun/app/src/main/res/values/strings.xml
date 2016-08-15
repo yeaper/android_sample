@@ -45,4 +45,10 @@
     <string name="profile_nickname">昵称</string>
     <string name="profile_sex">性别</string>
     <string name="profile_logout">退出登录</string>
+
+    <!-- app about -->
+    <string name="app_about_feedback">用户反馈</string>
+    <string name="app_about_version">版本</string>
+    <string name="feedback_hint">亲，很高兴接受您的意见！</string>
+    <string name="feedback_commit">提交</string>
 </resources>

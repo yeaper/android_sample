@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yyp.sun.ui.app.AppAboutActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:background="@color/bg_grey">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/app_about_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/app_about_feedback"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:gravity="left|center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_grey" />
+
+            <TextView
+                android:id="@+id/app_about_version"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/app_about_version"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:gravity="left|center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

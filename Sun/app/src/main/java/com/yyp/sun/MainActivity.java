@@ -1,6 +1,8 @@
 package com.yyp.sun;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -13,14 +15,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.yyp.sun.config.SunInfo;
+import com.yyp.sun.ui.app.AppAboutActivity;
 import com.yyp.sun.ui.mood.MoodFragment;
 import com.yyp.sun.ui.news.NewsFragment;
 import com.yyp.sun.ui.test.TestFragment;
@@ -28,6 +32,7 @@ import com.yyp.sun.ui.user.LoginActivity;
 import com.yyp.sun.ui.user.ProfileActivity;
 import com.yyp.sun.ui.user.data.UserInfo;
 import com.yyp.sun.util.AuthUtil;
+import com.yyp.sun.util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,12 +63,14 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle drawerToggle;
 
     private UserInfo user;
+    Context c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        c = MainActivity.this;
         user = AuthUtil.getCurrentUser();
 
         initToolbar();
@@ -76,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.main_fab:
-                Toast.makeText(getApplicationContext(), "fab", Toast.LENGTH_SHORT).show();
+                ToastUtil.showToast(c, "fab");
                 break;
         }
     }
@@ -122,11 +129,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!AuthUtil.isLogin()){
-                    Intent goLogin = new Intent(getApplicationContext(), LoginActivity.class);
+                    Intent goLogin = new Intent(c, LoginActivity.class);
                     startActivity(goLogin);
                     finish();
                 }else {
-                    Intent goProfile = new Intent(getApplicationContext(), ProfileActivity.class);
+                    Intent goProfile = new Intent(c, ProfileActivity.class);
                     startActivityForResult(goProfile, SunInfo.CODE_IN_PEOFILE);
                 }
             }
@@ -136,8 +143,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.menu_app_about:
+                        Intent goAppAbout = new Intent(c, AppAboutActivity.class);
+                        startActivity(goAppAbout);
                         break;
                     case R.id.menu_app_developer:
+                        
                         break;
                     default:
                         break;
@@ -182,10 +192,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // 按下返回键，先关闭侧边栏
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                drawerLayout.closeDrawers();
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         // 再恢复界面的时候，恢复这个开关的状态
         drawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        drawerToggle.onConfigurationChanged(newConfig);
     }
 
     @Override
