@@ -5,6 +5,10 @@
         <item
             android:id="@+id/menu_app_about"
             android:icon="@drawable/eye"
-            android:title="软件相关" />
+            android:title="@string/navigation_app_about" />
+        <item
+            android:id="@+id/menu_app_developer"
+            android:icon="@drawable/eye"
+            android:title="@string/navigation_app_developer" />
     </group>
 </menu>

@@ -42,7 +42,12 @@
             android:name=".ui.user.LoginActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.user.ResetPasswordActivity"
+        <activity
+            android:name=".ui.user.ResetPasswordActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.user.ProfileActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
     </application>

@@ -9,7 +9,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -20,6 +19,7 @@ import com.yyp.sun.R;
 import com.yyp.sun.config.SunInfo;
 import com.yyp.sun.ui.user.data.UserInfo;
 import com.yyp.sun.util.ImageUtil;
+import com.yyp.sun.util.LogUtil;
 import com.yyp.sun.util.ToastUtil;
 import com.yyp.sun.util.VerifyUtil;
 import com.yyp.sun.view.LoadingDialog;
@@ -167,9 +167,9 @@ public class RegActivity extends AppCompatActivity {
      * 注册
      */
     public void signUp() {
-        String account = regAccount.getText().toString();
-        String password = regPassword.getText().toString();
-        String confirmPsd = regConfirmPassword.getText().toString();
+        String account = regAccount.getText().toString().trim();
+        String password = regPassword.getText().toString().trim();
+        String confirmPsd = regConfirmPassword.getText().toString().trim();
 
         if(TextUtils.isEmpty(account) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPsd)){
             ToastUtil.showToast(c, "请仔细填写");
@@ -180,7 +180,7 @@ public class RegActivity extends AppCompatActivity {
                 if (!password.equals(confirmPsd)){
                     ToastUtil.showToast(c, "密码不一致");
                 }else{
-                    if(password.length() <= 7){
+                    if(password.length() < 8){
                         ToastUtil.showToast(c, "密码不安全");
                     }else {
                         if(!isSaveImage){
@@ -201,7 +201,7 @@ public class RegActivity extends AppCompatActivity {
 
                                 @Override
                                 public void done(BmobException e) {
-                                    if(e==null){
+                                    if(e == null){
                                         ToastUtil.showToast(c, "头像上传成功");
                                         // bmobFile.getFileUrl()--返回的上传文件的完整地址
                                         user.setAvatarUrl(bmobFile.getFileUrl());
@@ -218,12 +218,14 @@ public class RegActivity extends AppCompatActivity {
                                                 }else {
                                                     loadingDialog.dismiss();
                                                     ToastUtil.showToast(c, "注册失败");
+                                                    LogUtil.e("注册失败：code ="+e.getErrorCode()+",msg = "+e.getLocalizedMessage());
                                                 }
                                             }
                                         });
                                     }else{
                                         loadingDialog.dismiss();
-                                        Log.e(TAG, "头像上传失败"+e.getMessage());
+                                        ToastUtil.showToast(c, "头像上传失败");
+                                        LogUtil.e("头像上传失败：code ="+e.getErrorCode()+",msg = "+e.getLocalizedMessage());
                                     }
                                 }
 
@@ -289,6 +291,7 @@ public class RegActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         if(loadingDialog != null){
+            loadingDialog.stopRotateLoading();
             loadingDialog.dismiss();
         }
     }

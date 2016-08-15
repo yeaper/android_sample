@@ -43,4 +43,13 @@ public class LoadingDialog extends Dialog {
 
         setContentView(customView);
     }
+
+    /**
+     * 停止加载圈的转动
+     */
+    public void stopRotateLoading(){
+        if(loadView.isStart()){
+            loadView.stop();
+        }
+    }
 }

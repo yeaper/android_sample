@@ -124,6 +124,24 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.menu_app_about:
+                        break;
+                    case R.id.menu_app_developer:
+                        break;
+                    default:
+                        break;
+                }
+
+                item.setChecked(true);
+                // 进入后关闭侧边栏
+                drawerLayout.closeDrawers();
+                return true;
+            }
+        });
     }
 
     /**

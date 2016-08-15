@@ -33,4 +33,8 @@
     <string name="login_account">手机号/用户名</string>
     <string name="login_to_rst">忘记密码？</string>
     <string name="login_to_reg">立即注册</string>
+
+    <!-- 侧边栏 -->
+    <string name="navigation_app_about">软件相关</string>
+    <string name="navigation_app_developer">开发人员</string>
 </resources>
