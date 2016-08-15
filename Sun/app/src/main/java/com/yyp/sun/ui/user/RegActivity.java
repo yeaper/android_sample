@@ -129,7 +129,7 @@ public class RegActivity extends AppCompatActivity {
     }
 
     /**
-     * 上传头像
+     * 选择要上传的头像
      */
     private void uploadHeaderView() {
         Intent intentFromGallery = new Intent();
@@ -191,6 +191,7 @@ public class RegActivity extends AppCompatActivity {
 
                             final UserInfo user = new UserInfo();
                             user.setUsername(account);
+                            user.setNickName(account);
                             user.setPassword(password);
                             user.setSex("男");
                             user.setMobilePhoneNumber(account);

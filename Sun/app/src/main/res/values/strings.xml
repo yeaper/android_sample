@@ -30,11 +30,19 @@
 
     <!-- 登录 -->
     <string name="login_title">登录</string>
-    <string name="login_account">手机号/用户名</string>
+    <string name="login_account">手机号</string>
     <string name="login_to_rst">忘记密码？</string>
     <string name="login_to_reg">立即注册</string>
 
     <!-- 侧边栏 -->
     <string name="navigation_app_about">软件相关</string>
     <string name="navigation_app_developer">开发人员</string>
+
+    <!-- profile -->
+    <string name="profile_title">个人主页</string>
+    <string name="profile_save">保存</string>
+    <string name="profile_header_view">头像</string>
+    <string name="profile_nickname">昵称</string>
+    <string name="profile_sex">性别</string>
+    <string name="profile_logout">退出登录</string>
 </resources>

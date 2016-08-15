@@ -31,7 +31,7 @@ public class LoadingDialog extends Dialog {
     public void initDialog(String msg){
         LayoutInflater inflater = LayoutInflater.from(mContext);
         // 得到加载 view
-        customView = inflater.inflate(R.layout.loading_dialog, null);
+        customView = inflater.inflate(R.layout.dialog_loading, null);
         // 加载圈
         loadView = (RotateLoading) customView.findViewById(R.id.rotateLoading);
         // 提示文字

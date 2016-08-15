@@ -20,10 +20,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.yyp.sun.config.SunInfo;
 import com.yyp.sun.ui.mood.MoodFragment;
 import com.yyp.sun.ui.news.NewsFragment;
 import com.yyp.sun.ui.test.TestFragment;
 import com.yyp.sun.ui.user.LoginActivity;
+import com.yyp.sun.ui.user.ProfileActivity;
+import com.yyp.sun.ui.user.data.UserInfo;
 import com.yyp.sun.util.AuthUtil;
 
 import java.util.ArrayList;
@@ -54,11 +57,14 @@ public class MainActivity extends AppCompatActivity {
     private String[] tabTitle = {"测试", "资讯", "心情"};
     private ActionBarDrawerToggle drawerToggle;
 
+    private UserInfo user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        user = AuthUtil.getCurrentUser();
 
         initToolbar();
         initNavigation();
@@ -99,9 +105,9 @@ public class MainActivity extends AppCompatActivity {
 
         // 初始化头像、用户名、性别
         if(AuthUtil.isLogin()){
-            userName.setText(AuthUtil.getCurrentUser().getUsername());
-            headerView.setImageURI(Uri.parse(AuthUtil.getCurrentUser().getAvatarUrl()));
-            if(AuthUtil.getCurrentUser().getSex().equals("男")){
+            userName.setText(user.getNickName());
+            headerView.setImageURI(Uri.parse(user.getAvatarUrl()));
+            if(user.getSex().equals("男")){
                 userSex.setImageURI(Uri.parse("res://com.yyp.sun/" + R.drawable.sex_boy));
             }else{
                 userSex.setImageURI(Uri.parse("res://com.yyp.sun/" + R.drawable.sex_girl));
@@ -118,9 +124,10 @@ public class MainActivity extends AppCompatActivity {
                 if(!AuthUtil.isLogin()){
                     Intent goLogin = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(goLogin);
+                    finish();
                 }else {
-                    Intent goLogin = new Intent(getApplicationContext(), LoginActivity.class);
-                    startActivity(goLogin);
+                    Intent goProfile = new Intent(getApplicationContext(), ProfileActivity.class);
+                    startActivityForResult(goProfile, SunInfo.CODE_IN_PEOFILE);
                 }
             }
         });
@@ -225,6 +232,17 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             return fragmentList.size();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // 如果用户信息改变，更新侧栏头部
+        if (data != null && data.getExtras().getBoolean("isUpdated")){
+            user = AuthUtil.getCurrentUser();
+            initNavigation();
         }
     }
 }
