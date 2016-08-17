@@ -274,6 +274,7 @@ public class RegActivity extends AppCompatActivity {
                     // 图片拿到后，先保存到本地，再进行设置
                     Bitmap bitmap = intent.getExtras().getParcelable("data");
                     Uri uri = ImageUtil.saveImage(bitmap, SunInfo.HEAD_IMAGE_NAME, SunInfo.BASE_FILE_URL+SunInfo.HEAD_IMAGE_URL);
+
                     // 判断是否保存了头像
                     if(uri == null){
                         isSaveImage = false;

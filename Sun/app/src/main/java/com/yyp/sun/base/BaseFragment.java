@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.victor.loading.rotate.RotateLoading;
 import com.yyp.sun.R;
+import com.yyp.sun.base.interfaces.SunView;
 import com.yyp.sun.view.AutoLoadRecyclerView;
 
 import butterknife.BindView;

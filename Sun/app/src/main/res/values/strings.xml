@@ -51,4 +51,11 @@
     <string name="app_about_version">版本</string>
     <string name="feedback_hint">亲，很高兴接受您的意见！</string>
     <string name="feedback_commit">提交</string>
+
+    <!-- 发布心情 -->
+    <string name="publish_mood_title">心情随笔</string>
+    <string name="publish_mood_hint">记录生活点滴...</string>
+
+    <!-- 心情详情 -->
+    <string name="mood_detail_title">详情</string>
 </resources>

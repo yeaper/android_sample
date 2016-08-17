@@ -26,13 +26,13 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.yyp.sun.config.SunInfo;
 import com.yyp.sun.ui.app.AppAboutActivity;
 import com.yyp.sun.ui.mood.MoodFragment;
+import com.yyp.sun.ui.mood.PublishMoodActivity;
 import com.yyp.sun.ui.news.NewsFragment;
 import com.yyp.sun.ui.test.TestFragment;
 import com.yyp.sun.ui.user.LoginActivity;
 import com.yyp.sun.ui.user.ProfileActivity;
 import com.yyp.sun.ui.user.data.UserInfo;
 import com.yyp.sun.util.AuthUtil;
-import com.yyp.sun.util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,7 +83,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.main_fab:
-                ToastUtil.showToast(c, "fab");
+                Intent goPublishMood = new Intent(c, PublishMoodActivity.class);
+                startActivity(goPublishMood);
                 break;
         }
     }

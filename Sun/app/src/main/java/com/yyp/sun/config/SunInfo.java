@@ -14,9 +14,12 @@ public class SunInfo {
     public static final String ACCOUNT = "account";
     public static final String PASSWORD = "password";
 
-    // 获取照片的请求识别码
+    // 获取单张照片的请求识别码
     public static final int CODE_GALLERY_REQUEST = 0xa0;
-    public static final int CODE_RESULT_REQUEST = 0xa2;
+    public static final int CODE_RESULT_REQUEST = 0xa1;
+
+    // 获取多张照片的请求识别码
+    public static final int CODE_MORE_RESULT_REQUEST = 0xa2;
 
     // 文件存储路径
     public static final String BASE_FILE_URL = Environment.getExternalStorageState().equalsIgnoreCase(Environment.MEDIA_MOUNTED) ? Environment.getExternalStorageDirectory().getAbsolutePath() : Environment.getExternalStorageDirectory().getPath();
@@ -24,6 +27,9 @@ public class SunInfo {
     public static final String HEAD_IMAGE_NAME = "head.jpg";
 
     // 进入 profile 的识别码
-    public static final int CODE_IN_PEOFILE = 0xa4;
+    public static final int CODE_IN_PEOFILE = 0xa3;
+
+    // 数据库名字
+    public static final String DB_NAME_MOOD_DIARY = "mood_diary";
 
 }

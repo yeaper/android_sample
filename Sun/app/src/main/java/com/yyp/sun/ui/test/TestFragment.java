@@ -19,17 +19,17 @@ public class TestFragment extends BaseFragment {
     public void initView() {
         super.initView();
 
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        testAdapter = new TestAdapter(getActivity());
+        recyclerView.setAdapter(testAdapter);
+        loadData();
+
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 showLoadingIndicator(false);
             }
         });
-
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        testAdapter = new TestAdapter(getActivity());
-        recyclerView.setAdapter(testAdapter);
-        loadData();
 
         recyclerView.setLoadMoreListener(new AutoLoadRecyclerView.LoadMoreListener() {
             @Override

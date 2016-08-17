@@ -58,10 +58,8 @@ public class LoginActivity extends Activity {
      * 记住用户信息
      */
     public void rememberUser(){
-        if(AuthUtil.isLogin()){
-            loginAccount.setText(AuthUtil.getAccount());
-            loginPassword.setText(AuthUtil.getPassword());
-        }
+        loginAccount.setText(AuthUtil.getAccount());
+        loginPassword.setText(AuthUtil.getPassword());
     }
 
     @OnClick({R.id.login_login, R.id.loginToReg, R.id.loginToRst})

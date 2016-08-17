@@ -1,4 +1,4 @@
-package com.yyp.sun.base;
+package com.yyp.sun.base.interfaces;
 
 /**
  * Created by yyp on 2016/8/12.

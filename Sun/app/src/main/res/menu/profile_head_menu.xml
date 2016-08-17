@@ -7,5 +7,4 @@
             android:title="@string/profile_save"
             app:showAsAction="ifRoom"/>
     </group>
-
 </menu>
