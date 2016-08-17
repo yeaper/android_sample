@@ -26,8 +26,10 @@ public class SunInfo {
     public static final String HEAD_IMAGE_URL = "/sun/HD_Image/";
     public static final String HEAD_IMAGE_NAME = "head.jpg";
 
-    // 进入 profile 的识别码
-    public static final int CODE_IN_PEOFILE = 0xa3;
+    // intent 进入 Activity 的识别码
+    public static final int CODE_IN_PROFILE = 0xa3;
+    public static final int CODE_IN_PUBLISH_MOOD = 0xa4;
+    public static final int CODE_IN_MOOD_DETAIL = 0xa5;
 
     // 数据库名字
     public static final String DB_NAME_MOOD_DIARY = "mood_diary";

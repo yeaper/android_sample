@@ -93,8 +93,6 @@ public class PublishMoodActivity extends AppCompatActivity {
     public void initImage(){
         imageStrings = new ArrayList<>();
         publishMoodImage1.setImageURI(Uri.parse("res://com.yyp.sun/" + R.drawable.upload_image));
-        publishMoodImage2.setImageURI(Uri.parse("res://com.yyp.sun/" + R.drawable.upload_image));
-        publishMoodImage2.setVisibility(View.GONE);
     }
 
     /**
@@ -106,7 +104,7 @@ public class PublishMoodActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.profile_head_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_save, menu);
         return true;
     }
 
@@ -117,7 +115,7 @@ public class PublishMoodActivity extends AppCompatActivity {
                 //监听返回按钮
                 finish();
                 break;
-            case R.id.profile_save:
+            case R.id.menu_save:
                 saveMoodDiary();
                 break;
             default:
@@ -214,8 +212,20 @@ public class PublishMoodActivity extends AppCompatActivity {
             }
             moodDiaryDataDao.insert(moodDiaryData);
             ToastUtil.showToast(c, "保存成功");
-            finish();
+            backData();
         }
+    }
+
+    /**
+     * 发布完返回刷新请求
+     */
+    public void backData(){
+        Intent intent = getIntent();
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("isUpdated", true);
+        intent.putExtras(bundle);
+        setResult(SunInfo.CODE_IN_PUBLISH_MOOD, intent);
+        finish();
     }
 
     @Override
@@ -227,6 +237,8 @@ public class PublishMoodActivity extends AppCompatActivity {
             switch (imageStrings.size()){
                 case 1:
                     publishMoodImage1.setImageURI(Uri.parse("file://" + imageStrings.get(0)));
+                    publishMoodImage2.setImageURI(Uri.parse("res://com.yyp.sun/" + R.drawable.upload_image));
+                    publishMoodImage2.setVisibility(View.VISIBLE);
                     break;
                 case 2:
                     publishMoodImage1.setImageURI(Uri.parse("file://" + imageStrings.get(0)));

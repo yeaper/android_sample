@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 /**
  * Created by yyp on 2016/8/12.
  */
-public class TestAdapter extends RecyclerView.Adapter<TestAdapter.Holder>{
+public class TestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private List<Test> mData;
     private Context mContext;
@@ -43,20 +43,16 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.Holder>{
      * @return
      */
     @Override
-    public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_test, parent, false);
 
         return new Holder(view);
     }
 
-    /**
-     * 绑定 ViewHolder
-     * @param holder
-     * @param position
-     */
     @Override
-    public void onBindViewHolder(Holder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         Uri uri;
+        Holder holder = (Holder) viewHolder;
         // 适配测试类型的图片
         switch (position){
             case 0:
@@ -110,18 +106,6 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.Holder>{
             Animation animation = AnimationUtils.loadAnimation(viewToAnimate.getContext(), R.anim.item_bottom_in);
             viewToAnimate.startAnimation(animation);
             lastPosition = position;
-        }
-    }
-
-    /**
-     * 当视图与窗口解除关联时，取消动画
-     * @param holder
-     */
-    @Override
-    public void onViewDetachedFromWindow(Holder holder) {
-        super.onViewDetachedFromWindow(holder);
-        if (holder.cardView != null) {
-            holder.cardView.clearAnimation();
         }
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/mood_diary_cardview"
+    android:id="@+id/mood_diary_no_image_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
@@ -16,26 +16,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <com.facebook.drawee.view.SimpleDraweeView
-                android:id="@+id/mood_diary_image1"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_weight="1" />
-
-            <com.facebook.drawee.view.SimpleDraweeView
-                android:id="@+id/mood_diary_image2"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_weight="1" />
-        </LinearLayout>
-
         <TextView
-            android:id="@+id/mood_diary_content"
+            android:id="@+id/mood_diary_no_image_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -50,7 +32,7 @@
             android:background="@color/line_grey" />
 
         <TextView
-            android:id="@+id/mood_diary_date"
+            android:id="@+id/mood_diary_no_image_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="13sp"

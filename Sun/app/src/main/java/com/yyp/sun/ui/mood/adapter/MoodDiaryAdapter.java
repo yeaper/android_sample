@@ -1,7 +1,8 @@
 package com.yyp.sun.ui.mood.adapter;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.yyp.sun.R;
+import com.yyp.sun.config.SunInfo;
 import com.yyp.sun.entity.MoodDiaryData;
 import com.yyp.sun.ui.mood.MoodDetailActivity;
 
@@ -26,53 +28,73 @@ import butterknife.ButterKnife;
 /**
  * Created by yyp on 2016/8/17.
  */
-public class MoodDiaryAdapter extends RecyclerView.Adapter<MoodDiaryAdapter.Holder> {
+public class MoodDiaryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<MoodDiaryData> mData;
-    private Context mContext;
+    private Activity mActivity;
 
     private int lastPosition = -1; //最后一个item的下标
 
-    public MoodDiaryAdapter(Context context){
+    public MoodDiaryAdapter(Activity activity){
         mData = new ArrayList<>();
-        this.mContext = context;
+        this.mActivity = activity;
     }
 
     @Override
-    public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_mood_diary, parent, false);
-
-        return new Holder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(Holder holder, int position) {
-        String image1 = mData.get(position).getImageUrl1();
-        String image2 = mData.get(position).getImageUrl2();
-        // 设置图片
-        if(TextUtils.isEmpty(image1)){
-            holder.moodDiaryImage1.setVisibility(View.GONE);
-            holder.moodDiaryImage2.setVisibility(View.GONE);
-        }else {
-            if(TextUtils.isEmpty(image2)){
-                holder.moodDiaryImage1.setImageURI("file://" + mData.get(position).getImageUrl1());
-            }else{
-                holder.moodDiaryImage1.setImageURI("file://" + mData.get(position).getImageUrl1());
-                holder.moodDiaryImage2.setImageURI("file://" + mData.get(position).getImageUrl2());
-            }
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view;
+        switch (viewType){
+            case 1:
+                view = LayoutInflater.from(mActivity).inflate(R.layout.item_mood_diary_no_image, parent, false);
+                return new NoImageHolder(view);
+            case 2:
+                view = LayoutInflater.from(mActivity).inflate(R.layout.item_mood_diary, parent, false);
+                return new Holder(view);
+            default:
+                view = LayoutInflater.from(mActivity).inflate(R.layout.item_mood_diary, parent, false);
+                return new Holder(view);
         }
-        holder.moodDiaryContent.setText(mData.get(position).getContent());
-        holder.moodDiaryDate.setText(mData.get(position).getCreateDate());
+    }
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent goMoodDetail = new Intent(mContext, MoodDetailActivity.class);
-                mContext.startActivity(goMoodDetail);
-            }
-        });
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, final int position) {
+        if(viewHolder instanceof NoImageHolder){
+            NoImageHolder noImageHolder = (NoImageHolder) viewHolder;
+            noImageHolder.content.setText(mData.get(position).getContent());
+            noImageHolder.date.setText(mData.get(position).getCreateDate());
+            // 进入详情页
+            noImageHolder.cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent goMoodDetail = new Intent(mActivity, MoodDetailActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("moodDiary", mData.get(position));
+                    goMoodDetail.putExtras(bundle);
+                    mActivity.startActivityForResult(goMoodDetail, SunInfo.CODE_IN_MOOD_DETAIL);
+                }
+            });
+            setAnimation(noImageHolder.cardView, position);
 
-        setAnimation(holder.cardView, position);
+        }else if(viewHolder instanceof Holder){
+            Holder holder = (Holder) viewHolder;
+            holder.moodDiaryContent.setText(mData.get(position).getContent());
+            holder.moodDiaryDate.setText(mData.get(position).getCreateDate());
+            // 设置图片
+            holder.moodDiaryImage1.setImageURI("file://" + mData.get(position).getImageUrl1());
+            holder.moodDiaryImage2.setImageURI("file://" + mData.get(position).getImageUrl2());
+            // 进入详情页
+            holder.cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent goMoodDetail = new Intent(mActivity, MoodDetailActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("moodDiary", mData.get(position));
+                    goMoodDetail.putExtras(bundle);
+                    mActivity.startActivityForResult(goMoodDetail, SunInfo.CODE_IN_MOOD_DETAIL);
+                }
+            });
+            setAnimation(holder.cardView, position);
+        }
     }
 
     @Override
@@ -80,9 +102,20 @@ public class MoodDiaryAdapter extends RecyclerView.Adapter<MoodDiaryAdapter.Hold
         return mData.size();
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        String image1 = mData.get(position).getImageUrl1();
+        String image2 = mData.get(position).getImageUrl2();
+        if(TextUtils.isEmpty(image1) && TextUtils.isEmpty(image2)){
+            return 1;
+        }else{
+            return 2;
+        }
+    }
+
     /**
      * 添加一条数据
-     * @param test
+     * @param moodDiaryData
      */
     public void addData(MoodDiaryData moodDiaryData){
         mData.add(moodDiaryData);
@@ -111,6 +144,27 @@ public class MoodDiaryAdapter extends RecyclerView.Adapter<MoodDiaryAdapter.Hold
         }
     }
 
+    /**
+     * 无图片
+     */
+    class NoImageHolder extends RecyclerView.ViewHolder {
+
+        @BindView(R.id.mood_diary_no_image_cardview)
+        CardView cardView;
+        @BindView(R.id.mood_diary_no_image_content)
+        TextView content;
+        @BindView(R.id.mood_diary_no_image_date)
+        TextView date;
+
+        public NoImageHolder(View itemView){
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
+    }
+
+    /**
+     * 有图片
+     */
     class Holder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.mood_diary_cardview)

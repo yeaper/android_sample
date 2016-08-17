@@ -62,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
     private String[] tabTitle = {"测试", "资讯", "心情"};
     private ActionBarDrawerToggle drawerToggle;
 
+    private TestFragment testFragment;
+    private NewsFragment newsFragment;
+    private MoodFragment moodFragment;
+
     private UserInfo user;
     Context c;
 
@@ -84,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.main_fab:
                 Intent goPublishMood = new Intent(c, PublishMoodActivity.class);
-                startActivity(goPublishMood);
+                startActivityForResult(goPublishMood, SunInfo.CODE_IN_PUBLISH_MOOD);
                 break;
         }
     }
@@ -135,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 }else {
                     Intent goProfile = new Intent(c, ProfileActivity.class);
-                    startActivityForResult(goProfile, SunInfo.CODE_IN_PEOFILE);
+                    startActivityForResult(goProfile, SunInfo.CODE_IN_PROFILE);
                 }
             }
         });
@@ -184,9 +188,13 @@ public class MainActivity extends AppCompatActivity {
     public void initViewPager() {
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        pagerAdapter.addFragment(new TestFragment());
-        pagerAdapter.addFragment(new NewsFragment());
-        pagerAdapter.addFragment(new MoodFragment());
+        testFragment = new TestFragment();
+        newsFragment = new NewsFragment();
+        moodFragment = new MoodFragment();
+
+        pagerAdapter.addFragment(testFragment);
+        pagerAdapter.addFragment(newsFragment);
+        pagerAdapter.addFragment(moodFragment);
         // 设置页面缓存为2
         viewPager.setOffscreenPageLimit(2);
         viewPager.setAdapter(pagerAdapter);
@@ -271,10 +279,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // 如果用户信息改变，更新侧栏头部
+        moodFragment.onActivityResult(requestCode, resultCode, data);
+
         if (data != null && data.getExtras().getBoolean("isUpdated")){
-            user = AuthUtil.getCurrentUser();
-            initNavigation();
+            switch (requestCode){
+                case SunInfo.CODE_IN_PROFILE:
+                    // 如果用户信息改变，更新侧栏头部
+                    user = AuthUtil.getCurrentUser();
+                    initNavigation();
+                    break;
+            }
         }
     }
 }

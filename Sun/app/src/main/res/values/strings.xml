@@ -58,4 +58,5 @@
 
     <!-- 心情详情 -->
     <string name="mood_detail_title">详情</string>
+    <string name="mood_detail_delete">删除</string>
 </resources>

@@ -181,7 +181,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.profile_head_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_save, menu);
         return true;
     }
 
@@ -192,7 +192,7 @@ public class ProfileActivity extends AppCompatActivity {
                 //监听返回按钮
                 finish();
                 break;
-            case R.id.profile_save:
+            case R.id.menu_save:
                 if(VerifyUtil.isConnect(c)){
                     saveProfile();
                 }else{
@@ -254,7 +254,6 @@ public class ProfileActivity extends AppCompatActivity {
                     @Override
                     public void done(BmobException e) {
                         if(e == null){
-                            ToastUtil.showToast(c, "修改成功");
                             backData();
                         }else{
                             loadingDialog.dismiss();
@@ -296,7 +295,6 @@ public class ProfileActivity extends AppCompatActivity {
                                 @Override
                                 public void done(BmobException e) {
                                     if(e == null){
-                                        ToastUtil.showToast(c, "修改成功");
                                         backData();
                                     }else{
                                         loadingDialog.dismiss();
@@ -317,14 +315,14 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     /**
-     * 修改完返回
+     * 修改完返回刷新请求
      */
     public void backData(){
         Intent intent = getIntent();
         Bundle bundle = new Bundle();
         bundle.putBoolean("isUpdated", true);
         intent.putExtras(bundle);
-        setResult(SunInfo.CODE_IN_PEOFILE, intent); // setResult(int resultCode, Intent intent);
+        setResult(SunInfo.CODE_IN_PROFILE, intent);
         finish();
     }
 

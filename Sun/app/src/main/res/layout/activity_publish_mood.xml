@@ -25,14 +25,14 @@
             <EditText
                 android:id="@+id/publish_mood_content"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="350dp"
                 android:layout_marginTop="20dp"
                 android:background="@null"
                 android:hint="@string/publish_mood_hint"
                 android:textSize="17sp"
                 android:textColor="@color/black"
                 android:gravity="left"
-                android:maxLines="13" />
+                android:maxLines="24" />
 
             <View
                 android:layout_width="match_parent"
@@ -63,7 +63,8 @@
                     android:id="@+id/publish_mood_image2"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:layout_marginLeft="20dp"/>
+                    android:layout_marginLeft="20dp"
+                    android:visibility="gone"/>
             </LinearLayout>
 
         </LinearLayout>

@@ -77,4 +77,9 @@ public class BaseFragment extends Fragment implements SunView {
             loadingView.stop();
         }
     }
+
+    @Override
+    public void initData() {
+
+    }
 }

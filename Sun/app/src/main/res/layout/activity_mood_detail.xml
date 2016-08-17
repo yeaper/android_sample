@@ -11,13 +11,36 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:background="@color/bg_grey">
+        android:scrollbars="none">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:background="@drawable/mood_diary_bg">
+
+            <TextView
+                android:id="@+id/mood_detail_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="40dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/mood_detail_image1"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/mood_detail_image2"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"/>
 
         </LinearLayout>
     </ScrollView>

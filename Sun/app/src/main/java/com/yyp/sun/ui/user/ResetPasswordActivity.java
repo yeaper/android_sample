@@ -143,6 +143,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                     countDownTimer = new CountDownTimerUtils(sendCode, 60000, 1000);
                     countDownTimer.start();
                 }else{
+                    ToastUtil.showToast(c, "验证码获取失败");
                     LogUtil.e("验证码获取失败：code ="+e.getErrorCode()+",msg = "+e.getLocalizedMessage());
                 }
             }
@@ -182,6 +183,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                                     finish();
                                 }else{
                                     loadingDialog.dismiss();
+                                    ToastUtil.showToast(c, "密码修改失败");
                                     LogUtil.e("修改失败：code ="+e.getErrorCode()+",msg = "+e.getLocalizedMessage());
                                 }
                             }
