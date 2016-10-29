@@ -34,5 +34,11 @@ public class NewsFragment extends BaseFragment {
             }
         });
     }
+
+    @Override
+    public void initData() {
+        super.initData();
+
+    }
 }
 

@@ -11,7 +11,7 @@ public class DaoGenerator {
         schema.setDefaultJavaPackageDao("com.yyp.sun.dao");
         addMoodDiary(schema);
 
-        new org.greenrobot.greendao.generator.DaoGenerator().generateAll(schema, "D:\\workspace\\android_sample\\Sun\\app\\src\\main\\java-gen");
+        new org.greenrobot.greendao.generator.DaoGenerator().generateAll(schema, args[1]);
     }
 
     /**

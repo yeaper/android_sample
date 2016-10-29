@@ -26,9 +26,13 @@ public class SexSelectDialog extends Dialog {
     private void initDialog(){
         customView = LayoutInflater.from(mContext).inflate(R.layout.dialog_sex_select,null);
         requestWindowFeature(Window.FEATURE_NO_TITLE); //不加标题
-        setContentView(customView);
+        setContentView(customView); // 调用Dialog的setContentView(View v);
     }
 
+    /**
+     * 方便外部获取
+     * @return customView
+     */
     public View getCustomView(){
         return customView;
     }
