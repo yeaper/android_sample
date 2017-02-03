@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.yyp.socket.MainActivity">
+
+    <ImageView
+        android:id="@+id/main_app_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/app_icon"
+        android:layout_marginTop="60dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_app_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:text="@string/app_motto"/>
+
+    <EditText
+        android:id="@+id/main_username"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/main_app_icon"
+        android:background="@drawable/login_radius_bg"
+        android:hint="@string/login_username"
+        android:textSize="17sp"
+        android:inputType="textPersonName"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <EditText
+        android:id="@+id/main_password"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/main_username"
+        android:background="@drawable/login_radius_bg"
+        android:hint="@string/login_passsword"
+        android:textSize="17sp"
+        android:inputType="textPassword"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <Button
+        android:id="@+id/main_login"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/login_btn_bg"
+        android:layout_below="@id/main_password"
+        android:text="@string/login_text_color"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="4dp"/>
+</RelativeLayout>

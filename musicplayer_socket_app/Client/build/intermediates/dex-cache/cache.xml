@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.0_328cd37f889bac351b5f30f967e685f8c0664ab2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_355baa056aed4f98648171ae0996173221a410ce\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_56d5fbd38307c59d86474cf048bd3d7c58b9d632\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\design\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.0.0_429e51f7d3cf996ecad8418699bd949c50087053\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Project\Android_Studio\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.0\support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.0_a319875c2653894bdf98b7754822a0084f334782\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.0_3ecb1e1db76837cec3759258878d863055fe8f2a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_dd948976cef9577ae608688b0721af3109785786\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_7769519e160712bb9fb73499c3c69ab813d8f9cf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.0_ca947bbea7656decc30691f0c21b9ec74125fa1c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.0_8b0e5f1743fc36748d4ac6942bcdc8724ecc469a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.0_258e6cf697f72e34b83b40e51a9386a2a90d7a44\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1bff2985a51c6dbe8000141f9f18c6652013870b">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_fc2af0c1e93cd5094961b533fcbaa58497c3c85f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.0_81d955153b21f9033fad4dbf8658a15fdb5038f7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.0_9a8a367e550b4ed86480d86521895cbf8a49a4b0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\yyp\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.4.0\ea392375cf9ff59234a82e7928a204215ccc98cd\butterknife-annotations-8.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea392375cf9ff59234a82e7928a204215ccc98cd">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-annotations-8.4.0_b68714d4dbb8d13cfb03ad3b348fd0d29e660045\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.0_95b62c070fa45eb2f7abb9ebd10ba36b6fd5b683\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.0_912d08a374d224a289fa3bf59e4297c22a14f0f5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_02d24dd858296e9bb7532b58448f5794c69a0cb0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="eebc7e69176e794e509dbca4c1f6855dada2377a">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2c63db74daf60acfb9eabd7f2072821914d75ffe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.0_d52c2e23a1837c0c8b04687248e536b5e9ced418\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.0_0fac7a1a77c1e8b631dcc25bcaeadf4657fdb69c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace_android\Socket\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
+        <dex dex="D:\workspace_android\Socket\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton-butterknife-8.4.0_49550089b10070b2d57ea6a5f6b705741da5a818\classes.dex" />
+    </item>
+
+</items>
