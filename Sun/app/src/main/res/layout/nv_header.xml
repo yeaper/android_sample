@@ -7,20 +7,28 @@
     <!-- 侧栏的头部 -->
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/header_view"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         app:roundAsCircle="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"/>
 
     <TextView
         android:id="@+id/header_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:textColor="@color/white"
-        android:layout_below="@+id/header_view"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_toRightOf="@id/header_view"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10dp" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/header_sex"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_toRightOf="@id/header_view"
+        android:layout_below="@id/header_username"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp" />
 </RelativeLayout>

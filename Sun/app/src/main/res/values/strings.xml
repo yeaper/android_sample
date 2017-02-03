@@ -7,4 +7,56 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- common string -->
+    <string name="confirm">确定</string>
+    <string name="phone_number">手机号</string>
+    <string name="password">密码</string>
+    <string name="password_confirm">确认密码</string>
+
+    <!-- 注册 -->
+    <string name="reg_title">注册</string>
+    <string name="reg_upload_header">上传一张头像</string>
+    <string name="reg_tip">提示：注册的手机号必须有效，能接收短信。</string>
+    <string name="reg_agree_provision">我已阅读并同意</string>
+    <string name="reg_provision">《使用条款和隐私政策》</string>
+
+    <!-- 修改密码 -->
+    <string name="rst_title">修改密码</string>
+    <string name="rst_verify_code">验证码</string>
+    <string name="rst_send_code">获取验证码</string>
+    <string name="rst_new_password">新密码</string>
+    <string name="rst_password_confirm">确认新密码</string>
+
+    <!-- 登录 -->
+    <string name="login_title">登录</string>
+    <string name="login_account">手机号</string>
+    <string name="login_to_rst">忘记密码？</string>
+    <string name="login_to_reg">立即注册</string>
+
+    <!-- 侧边栏 -->
+    <string name="navigation_app_about">软件相关</string>
+    <string name="navigation_app_developer">开发人员</string>
+
+    <!-- profile -->
+    <string name="profile_title">个人主页</string>
+    <string name="profile_save">保存</string>
+    <string name="profile_header_view">头像</string>
+    <string name="profile_nickname">昵称</string>
+    <string name="profile_sex">性别</string>
+    <string name="profile_logout">退出登录</string>
+
+    <!-- app about -->
+    <string name="app_about_feedback">用户反馈</string>
+    <string name="app_about_version">版本</string>
+    <string name="feedback_hint">亲，很高兴接受您的意见！</string>
+    <string name="feedback_commit">提交</string>
+
+    <!-- 发布心情 -->
+    <string name="publish_mood_title">心情随笔</string>
+    <string name="publish_mood_hint">记录生活点滴...</string>
+
+    <!-- 心情详情 -->
+    <string name="mood_detail_title">详情</string>
+    <string name="mood_detail_delete">删除</string>
 </resources>

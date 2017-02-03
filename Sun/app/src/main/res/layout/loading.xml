@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.victor.loading.rotate.RotateLoading
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rotateLoading"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    app:loading_color="@color/colorAccent"
+    app:loading_speed="11"
+    app:loading_width="5dp" />

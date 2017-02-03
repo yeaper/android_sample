@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:background="@color/bg_grey">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/reg_account"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:singleLine="true"
+                android:background="@drawable/shape_form"
+                android:inputType="number"
+                android:hint="@string/phone_number"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/reg_password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="textPassword"
+                android:hint="@string/password"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:singleLine="true"
+                android:background="@drawable/shape_form"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/reg_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="textPassword"
+                android:hint="@string/password_confirm"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:singleLine="true"
+                android:background="@drawable/shape_form"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/reg_upload_header"
+                android:textSize="14sp"
+                android:textColor="@color/deepgrey"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/reg_header_view"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                app:roundAsCircle="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/reg_tip"
+                android:textSize="14sp"
+                android:textColor="@color/deepgrey"/>
+
+            <Button
+                android:id="@+id/reg_singup"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="30dp"
+                android:text="@string/reg_title"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:background="@drawable/shape_btn" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

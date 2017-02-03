@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 24
@@ -18,9 +19,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    apt {
-        arguments {
-            androidManifestFile variant.outputs[0]?.processResources?.manifestFile
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java-gen']
         }
     }
 }
@@ -36,11 +37,24 @@ dependencies {
     compile "com.android.support:design:$ASLVersion"
     compile "com.android.support:cardview-v7:$ASLVersion"
 
-    // Android Annotations
-    def AAVersion = '3.3.2'
-    apt "org.androidannotations:androidannotations:$AAVersion"
-    compile "org.androidannotations:androidannotations-api:$AAVersion"
-
+    // 图片加载控件
     compile 'com.facebook.fresco:fresco:0.12.0'
-    compile 'com.android.support:support-v4:24.1.1'
+    // 加载圈控件
+    compile 'com.victor:lib:1.0.4'
+    // 图片加载库
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    // 图片选择器
+    compile 'com.yuyh.imgsel:library:1.1.0'
+
+    // 依赖注入
+    compile 'com.jakewharton:butterknife:8.2.1'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+
+    // 数据存储
+    compile 'cn.bmob.android:bmob-sdk:3.5.0'
+    compile 'org.greenrobot:greendao:3.1.0'
+    compile 'org.greenrobot:greendao-generator:3.1.0'
+
+    //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
+    compile 'cn.bmob.android:http-legacy:1.0'
 }

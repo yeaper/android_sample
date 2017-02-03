@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">乐动</string>
+    <string name="app_motto">此刻，心随乐动</string>
+
+    <!--login-->
+    <string name="login_username">用户名</string>
+    <string name="login_passsword">密码</string>
+    <string name="login_text_color">登 录</string>
+
+    <!--musicPlay-->
+    <string name="music_play_get_music_list">获取音乐列表</string>
+    <string name="music_play_logout">退出</string>
+    <string name="tips_text">找不到可播放的音乐</string>
+</resources>

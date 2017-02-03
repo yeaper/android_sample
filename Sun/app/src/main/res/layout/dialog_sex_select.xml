@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="5dp">
+
+    <RadioGroup
+        android:id="@+id/profile_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/profile_rg_boy"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="男"
+            android:textSize="15sp"
+            android:textColor="@color/inblue"
+            android:gravity="right|center_vertical"
+            android:checked="true" />
+        <RadioButton
+            android:id="@+id/profile_rg_girl"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="女"
+            android:textSize="15sp"
+            android:textColor="@color/deepred"
+            android:gravity="right|center_vertical" />
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_grey" />
+
+    <TextView
+        android:id="@+id/profile_sex_ok"
+        android:layout_width="163dp"
+        android:layout_height="30dp"
+        android:text="@string/confirm"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+</LinearLayout>
