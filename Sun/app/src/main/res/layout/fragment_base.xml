@@ -14,11 +14,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.yyp.sun.view.AutoLoadRecyclerView
+            <com.xh.sun.view.AutoLoadRecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-            </com.yyp.sun.view.AutoLoadRecyclerView>
+            </com.xh.sun.view.AutoLoadRecyclerView>
 
             <include layout="@layout/loading" />
 

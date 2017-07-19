@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.yyp.sun.ui.mood.PublishMoodActivity">
+    tools:context="com.xh.sun.ui.mood.PublishMoodActivity">
 
     <include
         layout="@layout/toolbar"/>

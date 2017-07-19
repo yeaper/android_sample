@@ -7,7 +7,7 @@ android {
     buildToolsVersion "24.0.0"
 
     defaultConfig {
-        applicationId "com.yyp.sun"
+        applicationId "com.xh.sun"
         minSdkVersion 16
         targetSdkVersion 24
         versionCode 1

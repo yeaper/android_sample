@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yyp.sun">
+    package="com.xh.sun">
 
     <!-- 允许联网 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,14 +18,14 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name=".Sun"
+        android:name="com.xh.sun.Sun"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.xh.sun.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -35,19 +35,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.user.RegActivity"
+            android:name="com.xh.sun.ui.user.RegActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.user.LoginActivity"
+            android:name="com.xh.sun.ui.user.LoginActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.user.ResetPasswordActivity"
+            android:name="com.xh.sun.ui.user.ResetPasswordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.user.ProfileActivity"
+            android:name="com.xh.sun.ui.user.ProfileActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -57,19 +57,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.app.AppAboutActivity"
+            android:name="com.xh.sun.ui.app.AppAboutActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.app.FeedBackActivity"
+            android:name="com.xh.sun.ui.app.FeedBackActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.mood.PublishMoodActivity"
+            android:name="com.xh.sun.ui.mood.PublishMoodActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.mood.MoodDetailActivity"
+            android:name="com.xh.sun.ui.mood.MoodDetailActivity"
             >
 
         </activity>

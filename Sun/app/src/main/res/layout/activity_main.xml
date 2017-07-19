@@ -65,7 +65,7 @@
             android:layout_margin="16dp"
             android:src="@drawable/mood_publish"
             android:scaleType="fitCenter"
-            app:layout_behavior="com.yyp.sun.util.ScrollingFABBehavior"/>
+            app:layout_behavior="com.xh.sun.util.ScrollingFABBehavior"/>
 
     </android.support.design.widget.CoordinatorLayout>
 
